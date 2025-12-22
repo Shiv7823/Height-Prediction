@@ -1,38 +1,64 @@
-# 🤖 Height Prediction API (FastAPI + Machine Learning)
+# 📏 Height Prediction System (Machine Learning + Streamlit)
 
 ![Python](https://img.shields.io/badge/Python-3.9+-blue?logo=python)
-![FastAPI](https://img.shields.io/badge/FastAPI-API%20Framework-009688?logo=fastapi)
+![Streamlit](https://img.shields.io/badge/Streamlit-Web%20App-FF4B4B?logo=streamlit)
 ![Scikit-learn](https://img.shields.io/badge/ML-Scikit--Learn-orange?logo=scikitlearn)
 ![Status](https://img.shields.io/badge/Status-Active-brightgreen)
 
 ---
 
 ## 📘 Overview
-This project is a **machine learning-powered API** built with **FastAPI** that predicts an individual's height based on parental heights, gender, child order, and number of children using the **Galton Families dataset**.
+This project is a **Machine Learning–based web application** that predicts a child’s **estimated adult height** using parental and demographic data.
 
-The API allows users to send input data and receive a **predicted adult height** in real-time.
+The application is built using **Streamlit** for an interactive user interface and **scikit-learn** for model training and prediction.  
+It provides both a predicted height and an **expected confidence range**, making the prediction more realistic and transparent.
+
+⚠️ *Height prediction is an estimation problem and results may vary due to biological and environmental factors.*
 
 ---
 
 ## 🎯 Features
-✅ Trained a **Linear Regression Model** using scikit-learn  
-✅ Deployed using **FastAPI** for real-time predictions  
-✅ Includes **Swagger UI** and **ReDoc** for API documentation  
-✅ Modular project structure for easy extension and maintenance  
-✅ Clean JSON input-output format  
+- Interactive **Streamlit web interface**
+- Machine Learning model trained on real-world data
+- Feature engineering using **mid-parent height**
+- Displays **confidence range (± error margin)**
+- Visual comparison of parent heights and predicted height
+- Clear explanation of model behavior and limitations
+- Suitable for **academic projects, demos, and portfolios**
 
 ---
 
 ## 🧠 Model Details
-- **Algorithm:** Linear Regression  
-- **Dataset:** Galton Families Dataset  
-- **Accuracy:** ~80%  
-- **Input Features:**
-  - Father’s height  
-  - Mother’s height  
-  - Gender  
-  - Child order  
-  - Number of children  
+- **Algorithm:** Random Forest Regressor  
+- **Dataset Size:** 936 records  
+- **Target Variable:** Height (cm)  
+
+### Feature Engineering
+- Mid-parent height = (Father Height + Mother Height) / 2  
+
+### Input Features
+- Father’s height (cm)
+- Mother’s height (cm)
+- Total number of children
+- Child birth order
+- Gender
+
+### Evaluation Metrics
+- Mean Absolute Error (MAE)
+- Mean Squared Error (MSE)
+- R² Score
+
+> The model predicts an **estimated height with an acceptable error margin**, not an exact value.
+
+---
+
+## 📊 Application Interface
+The web application includes:
+- User-friendly input form with explanations
+- Predicted height output
+- Expected height range (confidence interval)
+- Bar chart comparing parent heights and predicted height
+- Model transparency and limitations section
 
 ---
 
@@ -40,5 +66,5 @@ The API allows users to send input data and receive a **predicted adult height**
 
 ### 1️⃣ Clone the Repository
 ```bash
-git clone https://github.com/yourusername/height-prediction-api.git
-cd height-prediction-api
+git clone https://github.com/yourusername/height-prediction-system.git
+cd height-prediction-system
