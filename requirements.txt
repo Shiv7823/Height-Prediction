@@ -4,3 +4,4 @@ numpy
 seaborn
 streamlit
 scikit-learn
+pickle
